@@ -1,0 +1,170 @@
+
+.container {
+  min-height: 100vh;
+  background: #0a192f;
+  padding: 120px 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.glassCard {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(79, 144, 255, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.mainTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.mainTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, #4f90ff, transparent);
+}
+
+.introduction {
+  color: #a8b2d1;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  color: #4f90ff;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.sectionTitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #4f90ff;
+  border-radius: 2px;
+}
+
+.list {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+.list li {
+  color: #a8b2d1;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+.list li::before {
+  content: "→";
+  position: absolute;
+  left: -1.5rem;
+  color: #4f90ff;
+}
+
+.link {
+  color: #4f90ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(79, 144, 255, 0.2);
+  text-align: center;
+  color: #4f90ff;
+}
+
+.quote {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-left: 4px solid #4f90ff;
+  background: rgba(79, 144, 255, 0.05);
+  color: #a8b2d1;
+}
+
+.backgroundAnimation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(37, 99, 235, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(96, 165, 236, 0.1) 0%,
+      transparent 50%
+    );
+  animation: moveBackground 20s ease infinite;
+  z-index: 0;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 100px 15px 30px;
+  }
+
+  .glassCard {
+    padding: 20px;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+}
