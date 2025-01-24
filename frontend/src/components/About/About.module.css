@@ -1,0 +1,69 @@
+.about {
+  padding: 6rem 2rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(79, 144, 255, 0.1),
+    rgba(37, 99, 235, 0.1)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glassContainer {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 4rem;
+  max-width: 1000px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  color: transparent;
+  -webkit-text-stroke: 2px #4f90ff;
+  transition: all 0.3s ease;
+}
+
+.titleFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #4f90ff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.title:hover .titleFill {
+  opacity: 1;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #a8b2d1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1rem;
+  }
+
+  .glassContainer {
+    padding: 2rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+}

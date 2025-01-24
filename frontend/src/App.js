@@ -1,44 +1,30 @@
-import "./App.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./style/style.css";
-import Home from "./components/Home";
-// import SubmitProject from "./components/SubmitProject";
-import About from "./components/About";
-import Register from "./components/Register";
-import Footer from "./components/Footer";
-import NotFound from "./components/NotFound";
-// import Schedule from "./components/Schedule";
-import Rules from "./components/Rules";
-import Conduct from "./components/Conduct";
-import Admin from "./components/Admin";
+import Home from "./pages/Home";
 import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer/Footer";
+import Rules from "./pages/Rules";
+import About from "./pages/About";
+import Register from "./pages/Register";
+import Conduct from "./pages/Conduct";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
     <Router>
-      <div className="app-wrapper">
-        <Navbar />
-        <ScrollToTop />
-        <main className="main-content">
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Home />} />
-
-              {/*<Route path="/submit-project" element={<SubmitProject />} /> */}
-              {/*<Route path="/schedule" element={<Schedule />} /> */}
-
-              <Route path="/rules" element={<Rules />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/conduct" element={<Conduct />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-        </main>
-        <Footer />
-      </div>
+      <Navbar />
+      <ScrollToTop />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/rules" element={<Rules />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/conduct" element={<Conduct />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </main>
+      <Footer />
     </Router>
   );
 }
